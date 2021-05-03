@@ -1,20 +1,24 @@
-// Code starting with video 17, with refactor
+// Section 3 code up to video 16 - Card Component
 import {
   IonApp,
   IonContent,
   IonHeader,
   IonToolbar,
   IonTitle,
+  IonInput,
   IonItem,
   IonLabel,
   IonDatetime,
+  IonCard,
+  IonCardHeader,
+  IonCardTitle,
+  IonCardContent,
 } from '@ionic/react';
 import React, { useState } from 'react';
-import BiorhythmCard from './components/BiorhythmCard';
 
 function App() {
+  // const [name, setName] = useState('');
   const [birthDate, setBirthDate] = useState('');
-  const targetDate = new Date().toISOString();
   return (
     <IonApp>
       <IonHeader>
@@ -23,6 +27,14 @@ function App() {
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
+        {/* <IonItem>
+          <IonLabel position="stacked">Name:</IonLabel>
+          <IonInput
+            type="text"
+            value={name}
+            onIonChange={(event) => setName(event.detail.value)}
+          />
+        </IonItem> */}
         <IonItem>
           <IonLabel position="stacked">Date of Birth:</IonLabel>
           <IonDatetime
@@ -31,7 +43,16 @@ function App() {
             onIonChange={(event) => setBirthDate(event.detail.value)}
           />
         </IonItem>
-        <BiorhythmCard targetDate={targetDate} />
+        <IonCard className="ion-text-center">
+          <IonCardHeader>
+            <IonCardTitle>Biorhythms on Date</IonCardTitle>
+            <IonCardContent>
+              <p>Physical:</p>
+              <p>Emotional:</p>
+              <p>Intellectual:</p>
+            </IonCardContent>
+          </IonCardHeader>
+        </IonCard>
       </IonContent>
     </IonApp>
   );
