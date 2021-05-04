@@ -1,3 +1,4 @@
+import { Plugins } from '@capacitor/core';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
@@ -21,7 +22,11 @@ import '@ionic/react/css/display.css';
 
 import './index.css';
 
+// assign SplashScreen from Capacitor Plugins
+const { SplashScreen } = Plugins;
+
 ReactDOM.render(<App />, document.getElementById('root'));
+SplashScreen.hide();
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
