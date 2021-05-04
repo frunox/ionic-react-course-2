@@ -29,7 +29,7 @@ function BiorhythmChart({ birthDate, targetDate }) {
           dataKey="date"
           ticks={[data[3].date, data[15].date, data[27].date]}
         />
-        {/* <YAxis /> */}
+        <YAxis width={22} />
         <CartesianGrid vertical={false} strokeDasharray="3 3" />
         <ReferenceLine x={data[15].date} />
         <Line
