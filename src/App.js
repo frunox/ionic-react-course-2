@@ -1,4 +1,3 @@
-// Code starting with video 17, with refactor
 import {
   IonApp,
   IonContent,
